@@ -44,9 +44,11 @@ export class Counter extends React.Component<Props, State> {
                 {/*language=SCSS*/}
                 <style jsx>{`
                     .counter {
-                        display: flex;
+                        display: inline-flex;
                         flex-flow: row nowrap;
                         align-items: center;
+                        padding: 1rem;
+                        background: lightgray;
                     }
 
                     .counter__button {
