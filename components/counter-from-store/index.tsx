@@ -57,16 +57,16 @@ export class CounterFromStore extends React.Component<Props, State> {
                         color: white;
                         border-radius: 5px;
                     }
-                    
+
                     .counter__value {
                         padding: .5rem;
                     }
-                    
+
                     .counter__button:hover {
                         background: darkblue;
                     }
-                    
-                    .counter__buton:active {
+
+                    .counter__button:active {
                         background: darkblue;
                     }
                 `}</style>
