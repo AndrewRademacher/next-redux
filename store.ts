@@ -16,20 +16,21 @@ export type Action = {
     type: ActionType.Reset
 }
 
-export namespace Store {
+// export namespace Store {
 
-    export type Counter = { value: number }
+export type CounterStore = { value: number }
 
-    export type All = {
-        counter: Counter
-    }
+export type All = {
+    counter: CounterStore
 }
 
-const initCounter: Store.Counter = {
-    value: 0,
+// }
+
+const initCounter: CounterStore = {
+    value: 1,
 };
 
-function counter(state: Store.Counter = initCounter, action: Action): Store.Counter {
+function counter(state: CounterStore = initCounter, action: Action): CounterStore {
     const { value } = state;
     switch (action.type) {
         case ActionType.Increment:
@@ -43,10 +44,10 @@ function counter(state: Store.Counter = initCounter, action: Action): Store.Coun
     }
 }
 
-export const reducers = combineReducers<Store.All>({
+export const reducers = combineReducers<All>({
     counter,
 });
 
-export const initState: Store.All = {
+export const initState: All = {
     counter: initCounter,
 };
