@@ -11,7 +11,7 @@ interface State {
     value: number
 }
 
-class CounterFromStore extends React.Component<Props> {
+class _CounterFromStore extends React.Component<Props> {
 
     handleIncrement = (): void => {
         this.props.dispatch({ type: ActionType.Increment, delta: 1 });
@@ -63,4 +63,6 @@ class CounterFromStore extends React.Component<Props> {
     }
 }
 
-export default connect(state => state)(CounterFromStore);
+// export default connect(state => state)(_CounterFromStore);
+
+export const CounterFromStore = connect(state => state)(_CounterFromStore);

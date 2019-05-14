@@ -2,8 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { CounterStore } from '../store';
 import { Counter } from '../components/counter';
-// import { CounterFromStore } from '../components/counter-from-store';
-import CounterFromStore from '../components/counter-from-store';
+import { CounterFromStore } from '../components/counter-from-store';
 
 interface Props {
     counter: CounterStore
