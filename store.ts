@@ -36,7 +36,7 @@ function counter(state: CounterStore = initCounter, action: Action): CounterStor
         case ActionType.Increment:
             return { ...state, value: state.value + action.delta };
         case ActionType.Decrement:
-            return { ...state, value: state.value + action.delta };
+            return { ...state, value: state.value - action.delta };
         case ActionType.Reset:
             return initCounter;
         default:

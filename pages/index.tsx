@@ -2,7 +2,8 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { CounterStore } from '../store';
 import { Counter } from '../components/counter';
-import { CounterFromStore } from '../components/counter-from-store';
+// import { CounterFromStore } from '../components/counter-from-store';
+import CounterFromStore from '../components/counter-from-store';
 
 interface Props {
     counter: CounterStore
@@ -24,10 +25,10 @@ class IndexPage extends React.Component<Props> {
 
                 <h1>Counters of Same State</h1>
                 <div>
-                    <CounterFromStore initialValue={this.props.counter.value}/>
+                    <CounterFromStore/>
                 </div>
                 <div>
-                    <CounterFromStore initialValue={this.props.counter.value}/>
+                    <CounterFromStore/>
                 </div>
             </>
         );
