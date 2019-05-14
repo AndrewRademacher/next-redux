@@ -13,11 +13,6 @@ interface State {
 
 class CounterFromStore extends React.Component<Props> {
 
-    constructor(props: Props) {
-        super(props);
-        console.log(props);
-    }
-
     handleIncrement = (): void => {
         this.props.dispatch({ type: ActionType.Increment, delta: 1 });
     };
