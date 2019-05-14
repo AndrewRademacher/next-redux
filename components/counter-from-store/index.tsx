@@ -3,31 +3,34 @@ import { connect } from 'react-redux';
 import { ActionType, CounterStore } from '../../store';
 
 export interface Props {
-    counter: CounterStore
-    dispatch: any
+    // counter: CounterStore
+    // dispatch: any
+    value: number
+    onIncrement: () => void
+    onDecrement: () => void
 }
 
 interface State {
     value: number
 }
 
-class _CounterFromStore extends React.Component<Props> {
+export class CounterFromStore extends React.Component<Props> {
 
-    handleIncrement = (): void => {
-        this.props.dispatch({ type: ActionType.Increment, delta: 1 });
-    };
-
-    handleDecrement = (): void => {
-        this.props.dispatch({ type: ActionType.Decrement, delta: 1 });
-    };
+    // handleIncrement = (): void => {
+    //     this.props.dispatch({ type: ActionType.Increment, delta: 1 });
+    // };
+    //
+    // handleDecrement = (): void => {
+    //     this.props.dispatch({ type: ActionType.Decrement, delta: 1 });
+    // };
 
     render(): React.ReactNode {
-        const { value } = this.props.counter;
+        const { value, onIncrement, onDecrement } = this.props;
         return (
             <div className="counter">
-                <div className="counter__button" onClick={this.handleDecrement}>-</div>
+                <div className="counter__button" onClick={onDecrement}>-</div>
                 <div className="counter__value">{value}</div>
-                <div className="counter__button" onClick={this.handleIncrement}>+</div>
+                <div className="counter__button" onClick={onIncrement}>+</div>
 
                 {/*language=SCSS*/}
                 <style jsx>{`
@@ -64,5 +67,4 @@ class _CounterFromStore extends React.Component<Props> {
 }
 
 // export default connect(state => state)(_CounterFromStore);
-
-export const CounterFromStore = connect(state => state)(_CounterFromStore);
+// export const CounterFromStore = connect(state => state)(_CounterFromStore);
